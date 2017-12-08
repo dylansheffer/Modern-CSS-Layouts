@@ -1,0 +1,48 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  background: #ddd;
+}
+
+.header {
+  background: white;
+  color: #333;
+}
+
+.main-nav > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav > ul > li {
+  display: inline-block;
+}
+
+main {
+  border: 3px dashed red;
+}
+
+.logo {
+  border-radius: 50%;
+  width: 152px;
+}
+
+.user-info {
+  border: 3px dashed blue;
+}
+
+.news-feed {
+  border: 3px dashed blue;
+}
+ 
+
+ /*# sourceMappingURL= style.css.map */
