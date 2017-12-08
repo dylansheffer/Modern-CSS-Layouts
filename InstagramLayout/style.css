@@ -15,6 +15,26 @@ body {
 .header {
   background: white;
   color: #333;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 40px;
+  top: 0;
+}
+
+.header-content {
+  max-width: 930px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main-nav > ul {
@@ -29,19 +49,50 @@ body {
 
 main {
   border: 3px dashed red;
+  margin: 4rem auto;
+  max-width: 930px;
+}
+
+.user {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
 }
 
 .logo {
   border-radius: 50%;
   width: 152px;
+  justify-self: center;
 }
 
 .user-info {
   border: 3px dashed blue;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.feed-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.feed-nav a {
+  display: block;
+  padding: 10px;
 }
 
 .news-feed {
   border: 3px dashed blue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 28px;
+}
+
+.news-feed img {
+  width: 100%;
 }
  
 
