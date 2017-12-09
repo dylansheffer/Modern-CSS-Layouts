@@ -1,0 +1,39 @@
+$light-blue: #415368;
+$dark-blue: #242a31;
+$yellow: #FCEE27;
+
+html {
+  box-sizing: border-box;
+  color: white;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: $light-blue;
+  margin: 0;
+}
+
+nav {
+  background: $dark-blue;
+  color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    // grid-area: 1 /
+    > li {
+      display: inline-block;
+    }
+  }
+}
+
+footer {
+  background: $dark-blue
+}

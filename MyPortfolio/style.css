@@ -1,0 +1,42 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  background: #415368;
+  margin: 0;
+}
+
+nav {
+  background: #242a31;
+  color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+}
+
+nav > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+nav > ul > li {
+  display: inline-block;
+}
+
+footer {
+  background: #242a31;
+}
+ 
+
+ /*# sourceMappingURL= style.css.map */
