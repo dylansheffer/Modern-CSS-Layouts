@@ -8,21 +8,51 @@ html {
 body {
   background: #111;
   color: #FFF;
+  margin: auto;
 }
 
 .col {
   background: #333;
+  overflow-y: scroll;
+}
+
+.col-header {
+  padding: 15px 10px 10px;
+  background: #222;
+  // Fixes issue with the h3s having margin
+  // and spilling out of the container
+  height: 100%;
+  h3 {
+    margin: 0;
+  }
 }
 
 .controls {
-  grid-row: 1 / -1
+  grid-row: 1 / -1;
+  display: flex;
+  padding: 5px;
+  // using this instead of align-content
+  // because the containers are divs that
+  // already take 100% of the width
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .tweet {
   padding: 10px;
   border-bottom: solid 1px #444;
+  display: grid;
+  grid-template-columns: 60px auto;
   img {
     border-radius: 50%;
+  }
+  > p, > div {
+    margin-top: 0;
+    // having to set the text to 2 to end
+    // because the image tag can't be used to
+    // take up a whole column?
+    grid-column: 2 / -1;
   }
 }
 

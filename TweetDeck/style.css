@@ -11,23 +11,54 @@ html {
 body {
   background: #111;
   color: #FFF;
+  margin: auto;
 }
 
 .col {
   background: #333;
+  overflow-y: scroll;
+}
+
+.col-header {
+  padding: 15px 10px 10px;
+  background: #222;
+  height: 100%;
+}
+
+.col-header h3 {
+  margin: 0;
 }
 
 .controls {
   grid-row: 1 / -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .tweet {
   padding: 10px;
   border-bottom: solid 1px #444;
+  display: grid;
+  grid-template-columns: 60px auto;
 }
 
 .tweet img {
   border-radius: 50%;
+}
+
+.tweet > p, .tweet > div {
+  margin-top: 0;
+  grid-column: 2 / -1;
 }
 
 .grid {
