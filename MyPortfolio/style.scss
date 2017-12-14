@@ -15,6 +15,10 @@ body {
   margin: 0;
 }
 
+:root {
+  --header-width: 100px;
+}
+
 nav {
   background: $dark-blue;
   color: white;
@@ -22,18 +26,43 @@ nav {
   top: 0;
   bottom: 0;
   height: 100vh;
-  > ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    // grid-area: 1 /
-    > li {
-      display: inline-block;
-    }
+  width: var(--header-width);
+  display: grid;
+  grid-template-rows: 100px repeat(3, 1fr);
+  justify-content: center;
+  a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
   }
 }
 
+main {
+  display: grid;
+  grid-template-areas: "hero"
+                       "posts";
+  grid-template-rows: 500px;
+
+}
+
+.hero {
+  grid-area: hero;
+}
+
+.posts{
+  grid-area: posts;
+}
+
+section {
+  padding-left: calc(1rem + var(--header-width));
+}
+
 footer {
-  background: $dark-blue
+  background: $dark-blue;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  padding-left: calc(1rem + var(--header-width));
 }

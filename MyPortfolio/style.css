@@ -14,6 +14,10 @@ body {
   margin: 0;
 }
 
+:root {
+  --header-width: 100px;
+}
+
 nav {
   background: #242a31;
   color: white;
@@ -21,21 +25,46 @@ nav {
   top: 0;
   bottom: 0;
   height: 100vh;
-}
-
-nav > ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  width: var(--header-width);
   display: grid;
+  grid-template-rows: 100px repeat(3, 1fr);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-nav > ul > li {
-  display: inline-block;
+nav a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-areas: "hero" "posts";
+  grid-template-rows: 500px;
+}
+
+.hero {
+  grid-area: hero;
+}
+
+.posts {
+  grid-area: posts;
+}
+
+section {
+  padding-left: calc(1rem + var(--header-width));
 }
 
 footer {
   background: #242a31;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  padding-left: calc(1rem + var(--header-width));
 }
  
 
