@@ -2,6 +2,10 @@ $light-blue: #415368;
 $dark-blue: #242a31;
 $yellow: #FCEE27;
 
+:root {
+--header-width: 100px;
+}
+
 html {
   box-sizing: border-box;
   color: white;
@@ -12,14 +16,100 @@ html {
 
 body {
   background: $light-blue;
+  min-height: 100%;
+  display: grid;
+  grid-template-areas:  "nav"
+                        "main"
+                        "footer";
   margin: 0;
 }
 
-:root {
-  --header-width: 100px;
+nav {
+  grid-area: nav;
+  input[type=checkbox] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  label {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  a{
+    display: none;
+    height: 100%;
+  }
+
+  label {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  label:after {
+    position: absolute;
+    content: "Menu \2261";
+  }
+
+  input:checked ~ a {
+    display: block;
+    width: 100%;
+  }
 }
 
+main {
+  display: grid;
+  grid-template-areas: "hero"
+                       "posts";
+  min-height: 100vh;
+}
+
+.hero {
+  grid-area: hero;
+}
+
+.posts{
+  grid-area: posts;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  h2{
+    grid-column: 1 / -1;
+  }
+}
+
+
+.post {
+  width: 293px;
+}
+
+footer {
+  background: $dark-blue;
+  grid-row: auto -1;
+  grid-area: footer;
+}
+
+//Tablet View
+@media(min-width:600px) {
+  .posts{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Desktop View
+@media(min-width:769px) {
+  body {
+    grid-template-areas:  "main"
+                          "footer";
+    grid-template-rows: auto;
+  }
+
 nav {
+  label {
+    display: none;
+  }
   background: $dark-blue;
   color: white;
   position: fixed;
@@ -34,15 +124,12 @@ nav {
     color: white;
     text-decoration: none;
     text-align: center;
+    display: block;
   }
 }
 
 main {
-  display: grid;
-  grid-template-areas: "hero"
-                       "posts";
   grid-template-rows: 500px;
-
 }
 
 .hero {
@@ -58,11 +145,6 @@ section {
 }
 
 footer {
-  background: $dark-blue;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
   padding-left: calc(1rem + var(--header-width));
+  }
 }

@@ -1,3 +1,7 @@
+:root {
+  --header-width: 100px;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -11,38 +15,55 @@ html {
 
 body {
   background: #415368;
+  min-height: 100%;
+  display: grid;
+  grid-template-areas: "nav" "main" "footer";
   margin: 0;
 }
 
-:root {
-  --header-width: 100px;
+nav {
+  grid-area: nav;
 }
 
-nav {
-  background: #242a31;
-  color: white;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  height: 100vh;
-  width: var(--header-width);
-  display: grid;
-  grid-template-rows: 100px repeat(3, 1fr);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+nav input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+nav label {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  text-align: center;
+  display: none;
+  height: 100%;
+}
+
+nav label {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+nav label:after {
+  position: absolute;
+  content: "Menu \2261";
+}
+
+nav input:checked ~ a {
+  display: block;
+  width: 100%;
 }
 
 main {
   display: grid;
   grid-template-areas: "hero" "posts";
-  grid-template-rows: 500px;
+  min-height: 100vh;
 }
 
 .hero {
@@ -51,20 +72,74 @@ main {
 
 .posts {
   grid-area: posts;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
 }
 
-section {
-  padding-left: calc(1rem + var(--header-width));
+.posts h2 {
+  grid-column: 1 / -1;
+}
+
+.post {
+  width: 293px;
 }
 
 footer {
   background: #242a31;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  padding-left: calc(1rem + var(--header-width));
+  grid-row: auto -1;
+  grid-area: footer;
+}
+
+@media (min-width: 600px) {
+  .posts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    grid-template-areas: "main" "footer";
+    grid-template-rows: auto;
+  }
+  nav {
+    background: #242a31;
+    color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: var(--header-width);
+    display: grid;
+    grid-template-rows: 100px repeat(3, 1fr);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  nav label {
+    display: none;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+  }
+  main {
+    grid-template-rows: 500px;
+  }
+  .hero {
+    grid-area: hero;
+  }
+  .posts {
+    grid-area: posts;
+  }
+  section {
+    padding-left: calc(1rem + var(--header-width));
+  }
+  footer {
+    padding-left: calc(1rem + var(--header-width));
+  }
 }
  
 
