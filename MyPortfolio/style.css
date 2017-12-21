@@ -133,6 +133,7 @@ footer {
   }
   .posts {
     grid-area: posts;
+    grid-template-columns: 1fr 1fr 1fr;
   }
   section {
     padding-left: calc(1rem + var(--header-width));
