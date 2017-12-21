@@ -2,16 +2,22 @@ $light-blue: #415368;
 $dark-blue: #242a31;
 $yellow: #FCEE27;
 
+@import "_reset";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
+
 :root {
 --header-width: 100px;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
   box-sizing: border-box;
   color: white;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
 }
 
 body {
@@ -22,6 +28,7 @@ body {
                         "main"
                         "footer";
   margin: 0;
+  font-family: Roboto,'Helvetica Neue', Helvetica, sans-serif;
 }
 
 nav {
@@ -99,7 +106,7 @@ footer {
 }
 
 // Desktop View
-@media(min-width:769px) {
+@media(min-width:1000px) {
   body {
     grid-template-areas:  "main"
                           "footer";
@@ -118,7 +125,7 @@ nav {
   height: 100vh;
   width: var(--header-width);
   display: grid;
-  grid-template-rows: 100px repeat(3, 1fr);
+  grid-template-rows: 100px repeat(4, 1fr);
   justify-content: center;
   a{
     color: white;
@@ -134,6 +141,21 @@ main {
 
 .hero {
   grid-area: hero;
+  display: grid;
+  grid-template-areas:  "image heading"
+                        "image subtext";
+}
+
+.hero__image {
+  grid-area: image;
+}
+
+.hero__heading {
+  grid-area: heading;
+}
+
+.hero__subtext {
+  grid-area: subtext;
 }
 
 .posts{

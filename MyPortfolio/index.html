@@ -5,22 +5,29 @@
   <meta name="viewport" content="width=device-width">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <title>Portfolio</title>
 </head>
 <body>
   <nav role="custom-dropdown">
     <input type="checkbox" name="nav-button" id="nav-button">
     <label for="nav-button" onclick></label>
-    <a href="#" class="logo">Logo</a>
-    <a href="#">About</a>
-    <a href="#">Work</a>
-    <a href="#">Blog</a>
-    <a href="#" class="social">LinkedIn</a>
-    <a href="#" class="social">Twitter</a>
+    <a href="#" class="logo"><img class="" src="img/logo.svg" alt="Logo"></a>
+    <a href="#"><span class="fa fa-user nav__icon"></span>About</a>
+    <a href="#"><span class="fa fa-code nav__icon"></span>Work</a>
+    <a href="#"><span class="fa fa-pencil nav__icon"></span>Blog</a>
+    <a href="#"><span class="fa fa-envelope nav__icon"></span>Contact</a>
+    <a href="#" class="social"><i class="fa fa-twitter nav__icon"></i></a>
+    <a href="#" class="social"><i class="fa fa-linkedin nav__icon"></i></a>
   </nav>
   <main class="home">
     <section class="hero">
-      <h1>I'm Dylan Sheffer and I am a</h1>
+      <div class="hero__image"><img src="img/profile.png" alt="Dylan Sheffer"></div>
+      <h1 class="hero__heading">I'm Dylan Sheffer and I am a
+        <span id="noun">
+        </span>
+      </h1>
+      <p class="hero__subtext">I create modern web sites and web applications using Javascript and .NET. <br /> Take a look at my <a href="http://">work</a> , <a href="http://">read my blog</a>, or <a href="http://">contact me!</a>
     </section>
     <section class="posts">
       <h2>Recent Work</h2>
