@@ -241,6 +241,8 @@ main {
 
 .posts {
   grid-area: posts;
+  background: #eee;
+  color: #333;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
@@ -322,6 +324,4 @@ footer {
     padding-left: calc(1rem + var(--header-width));
   }
 }
- 
-
- /*# sourceMappingURL= style.css.map */
+/*# sourceMappingURL=style.css.map */
