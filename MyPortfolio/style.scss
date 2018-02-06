@@ -28,48 +28,59 @@ body {
   background: #fdfdfd;
   min-height: 100%;
   display: grid;
-  grid-template-areas:  "nav"
+  grid-template-areas:  "header"
                         "main"
                         "footer";
   margin: 0;
   font-family: Roboto,'Helvetica Neue', Helvetica, sans-serif;
 }
 
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 60px auto;
+}
+
 nav {
-  grid-area: nav;
-  z-index: 2;
-  input[type=checkbox] {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-
-  label {
-    cursor: pointer;
-    user-select: none;
-  }
-
-  a{
+  background: $dark-blue;
+  color: white;
+  li, a{
+    text-decoration: none;
+    color: white;
     display: none;
-    height: 100%;
   }
 
-  label {
-    position: relative;
-    display: block;
-    width: 100%;
-  }
-
-  label:after {
-    position: absolute;
-    content: "Menu \2261";
-  }
-
-  input:checked ~ a {
-    display: block;
-    width: 100%;
+  ul.is-active {
+    display: flex;
+    li, a {
+      display: block;
+    }
   }
 }
+
+#toggle {
+  grid-column: 2 / -1;
+  padding: 8px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 1em;
+  // background: transparent;
+  // color: #fff;
+
+  &:focus,
+  &:hover {
+    background: #fff;
+    color: #000;
+  }
+}
+
+#toggle {
+}
+
+header .logo {
+  grid-column: 2 / -1;
+}
+
 
 main {
   display: grid;
@@ -227,33 +238,28 @@ footer {
 
 // Desktop View
 @media(min-width:850px) {
-  body {
-    grid-template-areas:  "main"
-                          "footer";
-    grid-template-rows: auto;
-  }
 
-nav {
-  label {
-    display: none;
-  }
-  background: $dark-blue;
-  color: white;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  height: 100vh;
-  width: var(--header-width);
-  display: grid;
-  grid-template-rows: 100px repeat(4, 1fr);
-  justify-content: center;
-  a{
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    display: block;
-  }
-}
+// nav {
+//   label {
+//     display: none;
+//   }
+//   background: $dark-blue;
+//   color: white;
+//   position: fixed;
+//   top: 0;
+//   bottom: 0;
+//   height: 100vh;
+//   width: var(--header-width);
+//   display: grid;
+//   grid-template-rows: 100px repeat(4, 1fr);
+//   justify-content: center;
+//   a{
+//     color: white;
+//     text-decoration: none;
+//     text-align: center;
+//     display: block;
+//   }
+// }
 
 main {
   // grid-template-rows: 500px;

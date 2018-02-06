@@ -9,17 +9,22 @@
   <title>Portfolio</title>
 </head>
 <body>
-  <nav role="custom-dropdown">
-    <input type="checkbox" name="nav-button" id="nav-button">
-    <label for="nav-button" onclick></label>
-    <a href="#" class="logo"><img class="" src="img/logo.svg" alt="Logo"></a>
-    <a href="#"><span class="fa fa-user nav__icon"></span>About</a>
-    <a href="#"><span class="fa fa-code nav__icon"></span>Work</a>
-    <a href="#"><span class="fa fa-pencil nav__icon"></span>Blog</a>
-    <a href="#"><span class="fa fa-envelope nav__icon"></span>Contact</a>
-    <a href="#" class="social"><i class="fa fa-twitter nav__icon"></i></a>
-    <a href="#" class="social"><i class="fa fa-linkedin nav__icon"></i></a>
-  </nav>
+  <header>
+    <h1>
+      <a href="#" class="logo"><img class="" src="img/logo.svg" alt="Logo"></a>
+    </h1>
+    <button id="toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav role="navigation">
+      <ul id="menu" class="is-active">
+        <li><a href="#"><span class="fa fa-user nav__icon"></span>About</a></li>
+        <li><a href="#"><span class="fa fa-code nav__icon"></span>Work</a></li>
+        <li><a href="#"><span class="fa fa-pencil nav__icon"></span>Blog</a></li>
+        <li><a href="#"><span class="fa fa-envelope nav__icon"></span>Contact</a></li>
+        <li><a href="#" class="social"><i class="fa fa-twitter nav__icon"></i></a></li>
+        <li><a href="#" class="social"><i class="fa fa-linkedin nav__icon"></i></a></li>
+      </ul>
+    </nav>
+  </header>
   <main class="home">
     <section class="hero">
       <div class="hero-content">
@@ -31,7 +36,7 @@
             <a href="#" class="social"><i class="fa fa-twitter nav__icon"></i></a>
             <a href="#" class="social"><i class="fa fa-linkedin nav__icon"></i></a>
         </p>
-        <p class="hero__subtext">Web developer bringing accessibility and user-centered design to web applications.</p>
+        <p class="hero__subtext">Web developer bringing accessibility and user-centered design to the web.</p>
       </div>
     </section>
     <section class="posts">
@@ -85,5 +90,7 @@
   <footer>
     &copy;2017 Dylan Sheffer
   </footer>
+  <script src="js/main.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/182774/modernizr_copy.js"></script>
 </body>
 </html>
