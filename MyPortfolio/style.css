@@ -197,7 +197,8 @@ body {
 header {
   grid-area: header;
   display: grid;
-  grid-template-columns: 60px auto;
+  grid-template-columns: 60px auto 100px;
+  background: #242a31;
 }
 
 nav {
@@ -221,8 +222,12 @@ nav ul.is-active li, nav ul.is-active a {
   display: block;
 }
 
+#toggle-container {
+  grid-column: 3 / -1;
+  justify-self: center;
+}
+
 #toggle {
-  grid-column: 2 / -1;
   padding: 8px;
   border: 2px solid #fff;
   border-radius: 5px;
@@ -234,8 +239,13 @@ nav ul.is-active li, nav ul.is-active a {
   color: #000;
 }
 
-header .logo {
-  grid-column: 2 / -1;
+header h1 {
+  grid-column: 1 / 2;
+  margin: 0;
+}
+
+header h1 img {
+  width: 40px;
 }
 
 main {
