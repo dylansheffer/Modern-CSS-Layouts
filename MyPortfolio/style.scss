@@ -40,22 +40,57 @@ nav {
   li, a{
     text-decoration: none;
     color: white;
+  }
+}
+
+#menu {
+  display: none;
+  li {
     display: none;
   }
+}
 
-  ul.is-active {
+#menu.is-active{
+  display: block;
+  ul {
     display: flex;
     flex-direction: column;
     padding: 0;
     margin: 0;
     width: 100vw;
-    li, a {
-      display: flex;
-      align-content: center;
-      justify-content: center;
+    li {
+      display: grid;
+      grid-template-columns: 1fr 200px 1fr;
+      font-size: 25px;
+      padding: 5px 0;
+      a {
+        grid-column: 2 / 3;
+        justify-self: center;
+
+        .nav__icon {
+          margin-right: 10px;
+        }
+
+      }
+
+      // .nav__text{
+      //   grid-column: 3 / 4;
+      //   justify-self: center;
+      // }
+
+      // i.fa.fa-twitter.nav__icon,
+      // i.fa.fa-linkedin.nav__icon {
+      //   grid-column: 2 / 4;
+      //   justify-self: center;
+      // }
     }
   }
 }
+
+// .nav__icon {
+//   margin-right: 5px;
+// }
+
 #toggle-container {
   grid-column: 3 / -1;
   justify-self: center;
