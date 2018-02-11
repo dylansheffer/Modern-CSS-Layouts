@@ -191,16 +191,19 @@ header {
   display: grid;
   grid-template-columns: 60px auto 100px;
   background: #242a31;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 nav {
   background: #242a31;
-  color: white;
+  color: #eeeeee;
 }
 
 nav li, nav a {
   text-decoration: none;
-  color: white;
+  color: #eeeeee;
 }
 
 #menu {
@@ -261,19 +264,21 @@ nav li, nav a {
   color: #000;
 }
 
-header h1 {
+header a {
   grid-column: 1 / 2;
-  margin: 0;
+  justify-self: center;
+  padding-top: 10px;
 }
 
-header h1 img {
-  width: 30px;
+header a img {
+  width: 40px;
 }
 
 main {
   display: grid;
   grid-template-areas: "hero" "posts";
   min-height: 100vh;
+  margin-bottom: 10px;
 }
 
 .hero {
@@ -288,7 +293,6 @@ main {
           justify-content: center;
   background: #415368;
   color: #eeeeee;
-  z-index: 1;
 }
 
 .hero__social {
@@ -430,8 +434,7 @@ a.social {
 
 footer {
   background: #242a31;
-  color: white;
-  grid-row: auto -1;
+  color: #eeeeee;
   grid-area: footer;
   padding: 20px;
   display: -webkit-box;
@@ -443,8 +446,9 @@ footer {
 }
 
 @media (min-width: 600px) {
-  header h1 img {
-    width: 40px;
+  header a img {
+    width: 50px;
+    justify-self: center;
   }
   .hero__heading {
     font-size: 35px;
